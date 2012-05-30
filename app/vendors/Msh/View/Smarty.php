@@ -22,7 +22,7 @@ class Msh_View_Smarty extends Slim_View {
    * This method will output the rendered template content
    *
    * @param    string $template The path to the Smarty template, relative to the  templates directory.
-   * @return   void
+   * @return   string
    */
 
   public function render($template) {
