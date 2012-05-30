@@ -23,7 +23,7 @@
   {*Conditional comment to apply opacity fix for IE #content background.
        Invalid CSS, but can be removed without harming design*}
   <!--[if gt IE 5]>
-  <link rel="stylesheet" type="text/css" href="css/ie.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="/script/ie.css" media="screen, projection, tv " />
   <![endif]-->
   <script type="text/javascript" src="/script/jquery-1.6.4.min.js"></script>
   {if $isadmin}
@@ -55,7 +55,7 @@
     {* #page: holds all page content, as well as footer *}
     <div id="page">
       {block name=page}{/block}
-      <p class="footer">
+      <p class="footer" style="clear:both">
 
 
         {* DO NOT REMOVE *}
