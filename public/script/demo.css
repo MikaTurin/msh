@@ -1,0 +1,30 @@
+body,html{margin:0;padding:0;width:100%;height:100%}
+body{background-color:#434042}
+body,html,p,div,td,H1,H2{font-size:11px;font-family:"Verdana","Serif"}
+p{margin-top:0;padding-top:0}
+input,select,textarea{font-size:12px}
+form{margin:0;padding:0}
+img{border:0}
+.rel{position:relative}
+.abs{position:absolute}
+.hide{display:none}
+.red{color:#ca0000}
+.red2,.red2>A{color:#ff3900}
+.brd{border:1px solid red}
+.nosel{-webkit-user-select:none;-moz-user-select:none}
+.go{cursor:pointer}
+.iea{display:inline;float:left}
+.up{text-transform:uppercase}
+.fll{float:left}
+.flr{float:right}
+.title1,.title1>A{color:#fad183;font-family:Tahoma;font-size:12px;font-weight:bold;text-transform:uppercase;text-decoration:none}
+.title2{color:#dcaf5e;font-family:Tahoma;font-weight:bold;text-transform:uppercase}
+.title3{color:#fad183;font-family:Tahoma;text-decoration:none}
+.txt{font-family:Tahoma}
+.txt10{font-size:10px}
+.txt12,.txt12>p{font-size:12px}
+.txt13{font-size:13px}
+.txt14{font-size:14px}
+.bld{font-weight:bold}
+.boxDEMO{max-width:1200px;min-width:980px;min-height:939px;height:100%;background:url('/img/templates/png/ready1.png') no-repeat top center; }
+.page{width:1200px;top:0;left:0}

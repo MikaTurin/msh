@@ -1,0 +1,26 @@
+public dolzhen bitj document root
+tak chto vam skoree vsego pridetsja propisatj domen v /etc/hosts i napravitj ego na public
+na papku app/cache/smarty nado postavitj prava na zapisj webserveru
+
+LIGHTTPD:
+$HTTP["host"] =~ "^msh.msz.me$" {
+    server.document-root = "/var/www/html/msh/public"
+    accesslog.filename = "/var/log/lighttpd/msh_access.log"
+    url.rewrite-once = (
+      "^(/(?!(favicon.ico$|robots.txt|img/|script/)).*)" => "/index.php$1"
+    )
+}
+
+APACHE: (htacces uzhe v public estj)
+# Turn on URL rewriting
+RewriteEngine On
+
+# Protect application and system files from being viewed
+#RewriteRule ^(app) - [F,L]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule (.*) index.php/$0 [PT,L]
