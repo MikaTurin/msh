@@ -3,31 +3,39 @@ class Msh_Controller_Admin extends Msh_Controller {
 
   public function index() {
 
-    echo 'thats admin babe!';
+    if (Msh_Admin::in()) {
+      Msh::getInstance()->response()->redirectWithLang('/');
+      return;
+    }
+
+    $this->view()->display('admin/login.tpl');
+  }
+
+  public function login() {
+
+    $req = Msh::getInstance()->request();
+    Msh_Admin::login($req->post('usr'), $req->post('pwd'));
+    Msh::getInstance()->response()->redirectWithLang('/admin');
+  }
+
+  public function logout() {
+
+    Msh_Admin::logout();
+    Msh::getInstance()->response()->redirectWithLang('/admin');
   }
 
   public function editor() {
 
-    $mode = '';
-    if (isset($_GET['mode'])) $mode = $_GET['mode'];
+    $mode = Msh::getInstance()->request()->get('mode');
 
     if ($mode == 'off') {
-
-      $val = 0;
-      unset($_SESSION['isadmin']);
+      Msh_Admin::editorHide();
     }
     else {
-      $val = 1;
-      $_SESSION['isadmin'] = 1;
+      Msh_Admin::editorShow();
     }
 
-/*    if (is_ajax()) {
-      print_r($_SESSION);
-      die('mode:'.$val);
-    }*/
-
-    header('Location: /');
-    exit;
+    Msh::getInstance()->response()->redirectWithLang('/');
   }
 
   public function save() {

@@ -26,7 +26,7 @@
   <link rel="stylesheet" type="text/css" href="/script/ie.css" media="screen, projection, tv " />
   <![endif]-->
   <script type="text/javascript" src="/script/jquery-1.6.4.min.js"></script>
-  {if $isadmin}
+  {if Msh_Admin::isEditor()}
   <script type="text/javascript">var LURL='{$LURL}';</script>
   <script src="/script/mercury/javascripts/mercury_loader.js" type="text/javascript"></script>
   {*<script src="/script/admin.js" type="text/javascript"></script>*}
@@ -68,7 +68,7 @@
   </div>
 </div>
 
-{if !$isadmin}
+{if Msh_Admin::in() && !Msh_Admin::isEditor()}
 <div class="go" style="position:fixed; top:20px; right:40px; width:48px; height:48px; background:url('/script/mercury/img/admin.png') no-repeat" onclick="{literal}$.ajax({type:'POST', url:'/admin/editor', success:function(){top.location.reload();}});{/literal}"></div>
 {/if}
 
